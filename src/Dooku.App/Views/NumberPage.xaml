@@ -2,24 +2,30 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:Dooku.App.ViewModels"
+             xmlns:converters="clr-namespace:Dooku.App.Converters"
              x:Class="Dooku.App.Views.NumberPage"
              Title="NumberPage">
     <ContentPage.BindingContext>
         <viewModels:NumberViewModel />
     </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <converters:ArrayToStringConverter x:Key="arrayToStringConverter"/>
+    </ContentPage.Resources>
     <VerticalStackLayout>
         <Label 
             Text="Click it!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <HorizontalStackLayout>
-            <Button Text="{Binding TheNumber[0]}" Command="{Binding IncrementNumberCommand}" CommandParameter="0" WidthRequest="50" HeightRequest="50" />
-            <Button Text="{Binding TheNumber[1]}" Command="{Binding IncrementNumberCommand}" CommandParameter="1" WidthRequest="50" HeightRequest="50" />
-            <Button Text="{Binding TheNumber[2]}" Command="{Binding IncrementNumberCommand}" CommandParameter="2" WidthRequest="50" HeightRequest="50" />
-            <Button Text="{Binding TheNumber[3]}" Command="{Binding IncrementNumberCommand}" CommandParameter="3" WidthRequest="50" HeightRequest="50" />
-            <Button Text="{Binding TheNumber[4]}" Command="{Binding IncrementNumberCommand}" CommandParameter="4" WidthRequest="50" HeightRequest="50" />
-            <Button Text="{Binding TheNumber[5]}" Command="{Binding IncrementNumberCommand}" CommandParameter="5" WidthRequest="50" HeightRequest="50" />
+            <Button Text="{Binding TheNumbers, Converter={StaticResource arrayToStringConverter}, ConverterParameter='0,0'}" Command="{Binding IncrementNumberCommand}" CommandParameter="00" WidthRequest="39" HeightRequest="40" Margin="2" />
+            <Button Text="{Binding TheNumbers, Converter={StaticResource arrayToStringConverter}, ConverterParameter='0,1'}" Command="{Binding IncrementNumberCommand}" CommandParameter="01" WidthRequest="39" HeightRequest="40" Margin="2" />
+            <Button Text="{Binding TheNumbers, Converter={StaticResource arrayToStringConverter}, ConverterParameter='0,2'}" Command="{Binding IncrementNumberCommand}" CommandParameter="02" WidthRequest="39" HeightRequest="40" Margin="2" />
+            <Button Text="{Binding TheNumbers, Converter={StaticResource arrayToStringConverter}, ConverterParameter='0,3'}" Command="{Binding IncrementNumberCommand}" CommandParameter="03" WidthRequest="39" HeightRequest="40" Margin="2" />
+            <Button Text="{Binding TheNumbers, Converter={StaticResource arrayToStringConverter}, ConverterParameter='0,4'}" Command="{Binding IncrementNumberCommand}" CommandParameter="04" WidthRequest="39" HeightRequest="40" Margin="2" />
+            <Button Text="{Binding TheNumbers, Converter={StaticResource arrayToStringConverter}, ConverterParameter='0,5'}" Command="{Binding IncrementNumberCommand}" CommandParameter="05" WidthRequest="39" HeightRequest="40" Margin="2" />
+            <Button Text="{Binding TheNumbers, Converter={StaticResource arrayToStringConverter}, ConverterParameter='0,6'}" Command="{Binding IncrementNumberCommand}" CommandParameter="06" WidthRequest="39" HeightRequest="40" Margin="2" />
+            <Button Text="{Binding TheNumbers, Converter={StaticResource arrayToStringConverter}, ConverterParameter='0,7'}" Command="{Binding IncrementNumberCommand}" CommandParameter="07" WidthRequest="39" HeightRequest="40" Margin="2" />
+            <Button Text="{Binding TheNumbers, Converter={StaticResource arrayToStringConverter}, ConverterParameter='0,8'}" Command="{Binding IncrementNumberCommand}" CommandParameter="08" WidthRequest="39" HeightRequest="40" Margin="2" />
         </HorizontalStackLayout>
-        <Label Text="{Binding TheNumber}" />
     </VerticalStackLayout>
 </ContentPage>
