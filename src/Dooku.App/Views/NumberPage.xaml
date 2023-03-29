@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Dooku.App.ViewModels"
+             x:Class="Dooku.App.Views.NumberPage"
+             Title="NumberPage">
+    <ContentPage.BindingContext>
+        <viewModels:NumberViewModel />
+    </ContentPage.BindingContext>
+    <VerticalStackLayout>
+        <Label 
+            Text="Click it!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <HorizontalStackLayout>
+            <Button Text="{Binding TheNumber[0]}" Command="{Binding IncrementNumberCommand}" CommandParameter="0" WidthRequest="50" HeightRequest="50" />
+            <Button Text="{Binding TheNumber[1]}" Command="{Binding IncrementNumberCommand}" CommandParameter="1" WidthRequest="50" HeightRequest="50" />
+            <Button Text="{Binding TheNumber[2]}" Command="{Binding IncrementNumberCommand}" CommandParameter="2" WidthRequest="50" HeightRequest="50" />
+            <Button Text="{Binding TheNumber[3]}" Command="{Binding IncrementNumberCommand}" CommandParameter="3" WidthRequest="50" HeightRequest="50" />
+            <Button Text="{Binding TheNumber[4]}" Command="{Binding IncrementNumberCommand}" CommandParameter="4" WidthRequest="50" HeightRequest="50" />
+            <Button Text="{Binding TheNumber[5]}" Command="{Binding IncrementNumberCommand}" CommandParameter="5" WidthRequest="50" HeightRequest="50" />
+        </HorizontalStackLayout>
+        <Label Text="{Binding TheNumber}" />
+    </VerticalStackLayout>
+</ContentPage>
